@@ -17,35 +17,24 @@
 
 <head>
   <script src="template.v2.js"></script>
+  <script src="https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf8">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <distill-header></distill-header>
   <d-front-matter>
     <script id='distill-front-matter' type="text/json">{
-    "title": "Why Momentum Really Works",
+    "title": "A playable introduction to Graphs Algorithms",
     "description": "Although \" extremely useful for visualizing high-dimensional data, t-SNE plots can sometimes be mysterious or misleading.",
     "published": "Jan 10, 2017",
     "authors": [
       {
-        "author":"Chris Olah",
-        "authorURL":"https://colah.github.io/",
-        "affiliations": [{"name": "Google Brain"}]
-      },
-      {
-        "author":"Ludwig Schubert",
-        "authorURL":"https://shancarter.com/",
-        "affiliations": [{"name": "Google Brain", "url": "https://g.co/brain"}]
-      },
-      {
-        "author":"Shan Carter",
-        "authorURL":"https://shancarter.com/",
-        "affiliations": [
-          {"name": "Google Brain", "url": "https://g.co/brain"},
-          {"name": "NYT", "url": "https://nytimes.com"}
-        ]
+        "author":"Francesco Deaglio",
+        "authorURL":"WIP",
+        "affiliations": [{"name": "None"}]
       }
     ],
     "katex": {
@@ -56,115 +45,158 @@
   }</script>
   </d-front-matter>
   <d-title>
-    <figure style="grid-column: page; margin: 1rem 0;"><img src="momentum.png"
-        style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /></figure>
-    <p>We often think of Momentum<d-cite key="mercier2011humans"></d-cite> as a means of dampening oscillations and
-      speeding up the iterations, leading to faster convergence. But it has other interesting behavior. It allows a
-      larger range of step-sizes to be used, and creates its own oscillations. What is going on?</p>
+    <p>Bla bla bla bla blblba</p>
   </d-title>
   <d-byline></d-byline>
   <d-article>
     <a class="marker" href="#section-1" id="section-1"><span>1</span></a>
-    <h2>A Brief Survey of Techniques</h2>
-    <p>Before diving in: if you haven’t encountered t-SNE before, here’s what you need to know about the math behind it.
-      The goal is to take a set of points in a high-dimensional space and find a faithful representation of those points
-      in a lower-dimensional space, typically the 2D plane. The algorithm is non-linear and adapts to the underlying
-      data, performing different transformations on different regions. Those differences can be a major source of
-      confusion.</p>
-    <p>This is the first paragraph of the article. Test a long&thinsp;&mdash;&thinsp;dash -- here it is.</p>
-    <p>Test for owner's possessive. Test for "quoting a passage." And another sentence. Or two. Some flopping fins; for
-      diving.</p>
-    <aside>Some text in an aside, margin notes, etc...</aside>
-    <p>Here's a test of an inline equation <d-math>c = a^2 + b^2</d-math>. Also with configurable katex standards just
-      using inline '$' signs: $$x^2$$ And then there's a block equation:</p>
-    <d-math block>
-      c = \pm \sqrt{ \sum_{i=0}^{n}{a^{222} + b^2}}
-    </d-math>
-    <p>Math can also be quite involved:</p>
-    <d-math block>
-      \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}}
-      {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
-    </d-math>
-    <a class="marker" href="#section-1.1" id="section-1.1"><span>1.1</span></a>
-    <h3>Citations</h3>
-    <p>
-      <d-slider style="width: 200px;"></d-slider>
-    </p>
-    <p>We can<d-cite bibtex-key="mercier2011humans"></d-cite> also cite <d-cite
-        key="gregor2015draw,mercier2011humans,openai2018charter"></d-cite> external publications. <d-cite
-        key="dong2014image,dumoulin2016guide,mordvintsev2015inceptionism"></d-cite>. We should also be testing footnotes
-      <d-footnote>This will become a hoverable footnote. This will become a hoverable footnote. This will become a
-        hoverable footnote. This will become a hoverable footnote. This will become a hoverable footnote. This will
-        become a hoverable footnote. This will become a hoverable footnote. This will become a hoverable footnote.
-      </d-footnote>. There are multiple footnotes, and they appear in the appendix<d-footnote>Given I have coded them
-        right. Also, here's math in a footnote: <d-math>c = \sum_0^i{x}</d-math>. Also, a citation. Box-ception<d-cite
-          key='gregor2015draw'></d-cite>!</d-footnote> as well.</p>
-    <a class="marker" href="#section-2" id="section-2"><span>2</span></a>
-    <h2>Displaying code snippets</h2>
-    <p>Some inline javascript:<d-code language="javascript">var x = 25;</d-code>. And here's a javascript code block.
-    </p>
-    <d-code block language="javascript">
-      var x = 25;
-      function(x){
-      return x * x;
-      }
-    </d-code>
-    <p>We also support python.</p>
-    <d-code block language="python">
-      # Python 3: Fibonacci series up to n
-      def fib(n):
-      a, b = 0, 1
-      while a < n: print(a, end=' ' ) a, b=b, a+b </d-code>
-        <p>And a table</p>
-        <table>
-          <thead>
-            <tr>
-              <th>First</th>
-              <th>Second</th>
-              <th>Third</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>23</td>
-              <td>654</td>
-              <td>23</td>
-            </tr>
-            <tr>
-              <td>14</td>
-              <td>54</td>
-              <td>34</td>
-            </tr>
-            <tr>
-              <td>234</td>
-              <td>54</td>
-              <td>23</td>
-            </tr>
-          </tbody>
-        </table>
-        <d-figure id="last-figure"></d-figure>
-        <script>
-          const figure = document.querySelector("d-figure#last-figure");
-          const initTag = document.createElement("span");
-          initTag.textContent = "initialized!"
-          figure.appendChild(initTag);
-          figure.addEventListener("ready", function () {
-            const initTag = figure.querySelector("span");
-            initTag.textContent = "ready"
-            console.log('ready')
-          });
-          figure.addEventListener("onscreen", function () {
-            const initTag = figure.querySelector("span");
-            initTag.textContent = "onscreen"
-            console.log('onscreen')
-          });
-          figure.addEventListener("offscreen", function () {
-            const initTag = figure.querySelector("span");
-            initTag.textContent = "offscreen!"
-            console.log('offscreen')
-          });
-        </script>
-        <p>That's it for the example article!</p>
+    <h2>Adjacency Matrix</h2>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <script src="playableMatrix.js"></script>
+    <d-figure>
+      <div class="matrix-and-graph">
+        <div class="grid" id="playable"></div>
+        <div>
+          <div class="graphClassB" id="playableG"></div>
+        </div>
+
+      </div>
+    </d-figure>
+
+
+    <script src="adjMatrix.js"></script>
+    <script src="adjList.js"></script>
+
+    <script src="adjExample.js"></script>
+
+    <h2>Classification</h2>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <h3>Undirected and Unweighted</h3>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <div class="matrix-and-graph">
+      <div class="grid" id="unun"></div>
+
+      <div>
+        <button id="ununB" class="customButton">Generate new random graph</button>
+        <div class="graphClass" id="ununG"></div>
+      </div>
+
+    </div>
+
+    <h3>Undirected and Weighted</h3>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <div class="matrix-and-graph">
+      <div class="grid" id="unwei"></div>
+      <div>
+        <button id="unweiB" class="customButton">Generate new random graph</button>
+        <div class="graphClass" id="unweiG"></div>
+      </div>
+
+    </div>
+
+
+    <h3>Directed and Unweighted</h3>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <div class="matrix-and-graph">
+      <div class="grid" id="dirun"></div>
+      <div>
+        <button id="dirunB" class="customButton">Generate new random graph</button>
+        <div class="graphClass" id="dirunG"></div>
+      </div>
+
+    </div>
+
+    <h3>Directed and Weighted</h3>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <div class="matrix-and-graph">
+      <div class="grid" id="dirwei"></div>
+      <div>
+        <button id="dirweiB" class="customButton">Generate new random graph</button>
+        <div class="graphClass" id="dirweiG"></div>
+      </div>
+
+    </div>
+
+
+    <h2>Graph Representaion</h2>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+
+    <div class="matrix-and-chart">
+      <div></div>
+      <div></div>
+      <div class="grid" id="grid"></div>
+      <script src="testscript.js"></script>
+    </div>
+
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+
+    <div class="matrix-and-chart">
+      <div></div>
+      <div></div>
+      <div class="grid" id="adjList"></div>
+      <script src="testscript.js"></script>
+    </div>
+
+    <h2>DFS and BFS</h2>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+
+    <div class="dfsbfs">
+      <div id="mynetworkDFS"></div>
+      <script src="graph.js"></script>
+      <script src="DFS.js"></script>
+      <div id="mynetworkBFS"></div>
+      <script src="BFS.js"></script>
+    </div>
+
+    <div class="matrix-and-chart">
+      <button onclick="nextNodeDFS()" id="buttonDFS">Visit Next Node DFS</button>
+      <button id="buttonBOTH">Visit Next Node Both</button>
+      <button id="buttonBFS">Visit Next Node BFS</button>
+
+    </div>
+
+    <h2>Depth-First Search (DFS)</h2>
+    <script src="preloaded.js"></script>
+    <script src="DFSforest.js"></script>
+
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+
+    <div class="matrix-and-list">
+      <div class="grid" id="gridSmall"></div>
+      <div></div>
+      <div class="grid" id="adjListSmall"></div>
+      <script src="testscript.js"></script>
+    </div>
+
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+
+
+    <button id="buttonDFSWide">Visit Next Node DFS</button>
+
+    <div id="graphAndTree">
+      <div id="DFSWide" class="graphClassWide"></div>
+      <div id="TreeDFS" class="graphClassWide"></div>
+    </div>
+
+    <div class="twoColumnArray">
+      <b>Pre</b>
+      <b>Post</b>
+    </div>
+
+    <div class="twoColumnArray">
+      <div id="arraySt" class="gridCentered"></div>
+      <div id="arrayEn" class="gridCentered"></div>
+      <div id="arrayStVal" class="gridCentered"></div>
+      <div id="arrayEnVal" class="gridCentered"></div>
+    </div>
+
+
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+    <h3>Edge labeling</h3>
+    <div id="DFSWideLabeling" class="graphClassWide"></div>
+    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac auctor arcu, a tempor lectus. Etiam malesuada, nunc non mollis tempor, arcu lectus facilisis turpis, et efficitur ante massa id ante. Phasellus rutrum ornare magna non condimentum. Nam faucibus eros ante, eu scelerisque arcu elementum vel. Aliquam ut sem scelerisque, maximus justo in, vehicula lectus. Nullam fringilla viverra ante, in laoreet nibh gravida a. Aenean mollis vel tellus a pharetra. Nullam aliquet blandit nibh ac lacinia. Sed tincidunt nisl leo, nec dignissim eros iaculis quis.</span>
+
+
 
   </d-article>
 

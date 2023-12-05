@@ -8,7 +8,7 @@ export const footerTemplate = `
   font-weight: 300;
   padding: 2rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: hsl(180, 5%, 15%); /*hsl(200, 60%, 15%);*/
+  background-color: hsl(0,98%,32%); /*hsl(200, 60%, 15%);*/
   text-align: left;
   contain: content;
 }
@@ -53,20 +53,13 @@ export const footerTemplate = `
 
 <div class='footer-container'>
 
+  This page is based on the amazing
   <a href="/" class="logo">
     ${logo}
     Distill
-  </a> is dedicated to clear explanations of machine learning
+  </a> template. You can find it <a href="https://distill.pub/about/">here</a>
 
   <div class="nav">
-    <a href="https://distill.pub/about/">About</a>
-    <a href="https://distill.pub/journal/">Submit</a>
-    <a href="https://distill.pub/prize/">Prize</a>
-    <a href="https://distill.pub/archive/">Archive</a>
-    <a href="https://distill.pub/rss.xml">RSS</a>
-    <a href="https://github.com/distillpub">GitHub</a>
-    <a href="https://twitter.com/distillpub">Twitter</a>
-    &nbsp;&nbsp;&nbsp;&nbsp; ISSN 2476-0757
   </div>
 
 </div>

@@ -5,7 +5,7 @@ export const headerTemplate = `
 distill-header {
   position: relative;
   height: 60px;
-  background-color: hsl(200, 60%, 15%);
+  background-color: hsl(0,98%,32%);
   width: 100%;
   box-sizing: border-box;
   z-index: 2;
@@ -58,6 +58,7 @@ distill-header .logo {
 distill-header .nav {
   float: right;
   font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
 }
 distill-header .nav a {
   font-size: 12px;
@@ -67,13 +68,10 @@ distill-header .nav a {
 </style>
 <div class="content">
   <a href="/" class="logo">
-    ${logo}
-    Distill
+    f<b>deaglio</b>
   </a>
   <nav class="nav">
     <a href="/about/">About</a>
-    <a href="/prize/">Prize</a>
-    <a href="/journal/">Submit</a>
   </nav>
 </div>
 `;
