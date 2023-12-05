@@ -93,7 +93,7 @@ input[type="range"] {
 .graphClassWide {
     width: 100%;
     height: 310px;
-    border: 0px solid #000;
+    border: 0 solid #000;
     background-color: rgba(190, 190, 190, 0);
 }
 

@@ -1,4 +1,3 @@
-import logo from '../assets/distill-logo.svg';
 
 export const headerTemplate = `
 <style>
